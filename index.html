@@ -13,7 +13,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8959550597354203" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"DSA Quiz Tracker","url":"https://www.csrtutorial.space/","potentialAction":{"@type":"SearchAction","target":"https://www.csrtutorial.space/?category={category}","query-input":"required name=category"}}
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DSA Quiz Tracker",
+  "url": "https://www.csrtutorial.space/"
+}
 </script>
 <style>
 :root {
@@ -64,6 +69,14 @@ p {
   font-size: 0.9rem;
   margin-bottom: 15px;
 }
+.top-actions {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+}
+
 
 /* 🔹 Category links with effects */
 .category-btn {
@@ -155,11 +168,10 @@ p {
   font-size: 0.8rem;
 }
 
-/* 🔹 Math Fun floating button with effect */
-.funmathbutton {
-  position: absolute;
-  top: 10px;
-  right: 15px;
+
+.funmathbutton,
+.learningbutton {
+  position: static; /* remove absolute */
   background: #00c6ff;
   color: #fff;
   border: none;
@@ -167,34 +179,10 @@ p {
   padding: 12px 22px;
   font-size: 0.9rem;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
 }
 
-.funmathbutton:hover {
-  background: #0072ff;
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-.learningbutton {
-  position: absolute;
-  top: 10px;
-  right: 60px;
-  background: #00c6ff;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 12px 22px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
-}
-.learningbutton:hover{
-  background: #0072ff;
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
 /* 🔹 Quiz and report section spacing */
 #quiz, #report {
   margin-top: 60px;
@@ -210,6 +198,20 @@ footer, p a {
 @media (max-width: 768px) {
   .category-btn {
     font-size: 0.85rem;
+  }
+   .top-actions {
+    position: static;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .funmathbutton,
+  .learningbutton {
+    width: 100%;
+    max-width: 220px;
   }
 }
 
@@ -231,17 +233,6 @@ footer, p a {
   h1 {
     margin-top: 30px;
     font-size: 1.7rem;
-  }
-   .funmathbutton {
-    top: 30px;
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
-
-  .learningbutton {
-    top: 70px;
-    font-size: 0.9rem;
-    padding: 10px 20px;
   }
 }
 .linksprivacy{
@@ -286,19 +277,15 @@ color:blue;
     font-size: 2rem;
   }
 
-  .funmathbutton {
-    top: 40px;
-    right: 25px;
-    font-size: 1rem;
-    padding: 12px 24px;
+   .top-actions {
+    flex-direction: column; /* down by down */
+    align-items: center;
   }
 
-.learningbutton {
-    top: 40px;
-    right: 60px;
-    font-size: 1rem;
-    padding: 10px 22px;
-  }
+  .funmathbutton,
+  .learningbutton {
+    width: 2
+}
 }
 
 
@@ -307,8 +294,15 @@ color:blue;
 </head>
 <body>
 <main class="container" role="main" id="mainBox">
-<button class="funmathbutton" onclick="window.open('Funmath.html','_blank')" aria-label="Go to Math Fun Section"> 💡 Math Fun </button>
-<button class="learningbutton" onclick="window.open('learningmainscreen.html','_blank')" aria-label="Go to Learning section">🎓Learn DSA</button>
+<div class="top-actions">
+  <button class="funmathbutton" onclick="window.open('Funmath.html','_blank')">
+    💡 Math Fun
+  </button>
+  <button class="learningbutton" onclick="window.open('learningmainscreen.html','_blank')">
+    🎓 Learn DSA
+  </button>
+</div>
+
 <h1>🧠 DSA Quiz Tracker</h1>
 <section id="home">
   <p>Select a category to start:</p>
@@ -368,5 +362,4 @@ color:blue;
 <script defer src="quizdata.js"></script>
 </body>
 </html>
-
 
