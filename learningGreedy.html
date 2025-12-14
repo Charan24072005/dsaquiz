@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Greedy Algorithms in DSA with concepts, properties, classic problems, and interview tips." />
+  <meta name="robots" content="index, follow" />
+  <title>💰 Greedy Algorithms | DSA Learning</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 50px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #00ffcc;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-top: 35px;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      margin-top: 25px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn:hover {
+      background: #00e6b5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>💰 Greedy Algorithms</h1>
+
+    <p>
+      Greedy algorithms build a solution step by step by always choosing the
+      option that looks best at the current moment. The goal is to reach an
+      optimal solution using locally optimal decisions.
+    </p>
+
+    <h2>Why Greedy Algorithms are Important</h2>
+    <ul>
+      <li>Simple and efficient approach</li>
+      <li>Used in optimization problems</li>
+      <li>Faster than DP in many cases</li>
+      <li>Common in interviews</li>
+    </ul>
+
+    <h2>When Greedy Works</h2>
+    <p>
+      Greedy algorithms work correctly when a problem has:
+    </p>
+    <ul>
+      <li>Greedy choice property</li>
+      <li>Optimal substructure</li>
+    </ul>
+
+    <h2>Common Greedy Problems</h2>
+
+    <h3>Activity Selection Problem</h3>
+    <p>
+      Select the maximum number of activities that do not overlap by always
+      choosing the activity that finishes first.
+    </p>
+
+    <h3>Fractional Knapsack</h3>
+    <p>
+      Select items based on value-to-weight ratio to maximize total value.
+    </p>
+
+    <h3>Coin Change (Greedy Version)</h3>
+    <p>
+      Use the largest denomination coins first to minimize the number of coins.
+    </p>
+
+    <h3>Minimum Platforms</h3>
+    <p>
+      Find the minimum number of platforms required so that no train waits.
+    </p>
+
+    <h3>Huffman Coding</h3>
+    <p>
+      Create optimal prefix codes using frequency-based merging.
+    </p>
+
+    <h2>Time Complexity</h2>
+    <p>
+      Greedy algorithms are usually fast and often involve sorting.
+    </p>
+   <h2>Greedy Algorithms – Code & Time Complexity</h2>
+
+<p>
+  Greedy algorithms build the solution step by step by always choosing
+  the locally optimal choice. Their correctness depends on the greedy
+  choice property and optimal substructure.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">
+      Algorithm & Code
+    </th>
+    <th style="border:1px solid #ccc; padding:10px;">
+      Explanation & Time Complexity
+    </th>
+  </tr>
+
+  <!-- Activity Selection -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Activity Selection Problem</b><br><br>
+      <code>
+        sort activities by finish time<br>
+        select first activity<br>
+        for each next activity {<br>
+        &nbsp;&nbsp;if(start &gt;= lastFinish) select activity;<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Always selects the activity that finishes earliest.<br>
+      Sorting dominates the time complexity.<br>
+      Single pass selection after sorting.<br>
+      <b>Time Complexity:</b> O(n log n)
+    </td>
+  </tr>
+
+  <!-- Fractional Knapsack -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Fractional Knapsack</b><br><br>
+      <code>
+        sort items by value/weight ratio<br>
+        for each item {<br>
+        &nbsp;&nbsp;take full or fractional item;<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Chooses item with maximum value per unit weight.<br>
+      Sorting by ratio dominates runtime.<br>
+      Each item processed once.<br>
+      <b>Time Complexity:</b> O(n log n)
+    </td>
+  </tr>
+
+  <!-- Coin Change (Greedy) -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Coin Change (Greedy)</b><br><br>
+      <code>
+        sort coins in descending order<br>
+        for each coin {<br>
+        &nbsp;&nbsp;while(amount &gt;= coin) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;take coin;<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Always selects the largest denomination coin first.<br>
+      Works correctly only for specific coin systems.<br>
+      Linear scan after sorting.<br>
+      <b>Time Complexity:</b> O(n log n)
+    </td>
+  </tr>
+
+  <!-- Huffman Coding -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Huffman Coding</b><br><br>
+      <code>
+        create min heap of frequencies<br>
+        while(heap size &gt; 1) {<br>
+        &nbsp;&nbsp;extract two min nodes;<br>
+        &nbsp;&nbsp;merge and insert back;<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Greedily merges two least frequent characters.<br>
+      Priority queue operations dominate runtime.<br>
+      Heap operations repeated n times.<br>
+      <b>Time Complexity:</b> O(n log n)
+    </td>
+  </tr>
+
+  <!-- Minimum Platforms -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Minimum Platforms</b><br><br>
+      <code>
+        sort arrival and departure times<br>
+        use two pointers to track overlap<br>
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Greedily tracks maximum overlapping intervals.<br>
+      Sorting dominates the process.<br>
+      Single traversal after sorting.<br>
+      <b>Time Complexity:</b> O(n log n)
+    </td>
+  </tr>
+
+</table>
+
+<p style="margin-top:20px;">
+  Greedy algorithms are fast and simple but require proof of correctness.
+  Choosing the wrong greedy strategy can lead to incorrect solutions.
+</p>
+
+
+    <h2>Advantages of Greedy Algorithms</h2>
+    <ul>
+      <li>Easy to implement</li>
+      <li>Fast execution</li>
+      <li>Low memory usage</li>
+    </ul>
+
+    <h2>Disadvantages of Greedy Algorithms</h2>
+    <ul>
+      <li>Does not work for all problems</li>
+      <li>May fail if greedy choice is incorrect</li>
+      <li>Needs proof of correctness</li>
+    </ul>
+
+    <h2>Greedy vs Dynamic Programming</h2>
+    <p>
+      Greedy makes local choices, while DP explores all possibilities.
+      DP guarantees correctness but greedy is often faster.
+    </p>
+
+    <h2>Greedy in Interviews</h2>
+    <p>
+      Interviewers expect you to explain why a greedy choice works.
+      Always justify correctness with logic or proof.
+    </p>
+
+    <p>
+      Practice greedy problems to improve optimization thinking and speed.
+    </p>
+
+    <button class="btn" onclick="window.location.href='Greedy.html'">
+      ▶ Start Greedy Quiz
+    </button>
+
+  </main>
+</body>
+</html>

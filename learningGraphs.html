@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Graphs in Data Structures and Algorithms including types of graphs, representations, BFS, DFS, and applications." />
+  <meta name="robots" content="index, follow" />
+  <title>🔗 Graphs | DSA Learning</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 50px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #00ffcc;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-top: 35px;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      margin-top: 25px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn:hover {
+      background: #00e6b5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>🔗 Graphs</h1>
+
+    <p>
+      A graph is a data structure that consists of a set of vertices (nodes) and
+      edges that connect pairs of vertices. Graphs are used to represent
+      relationships between objects.
+    </p>
+
+    <h2>Why Graphs are Important</h2>
+    <ul>
+      <li>Model real-world networks like roads and social media</li>
+      <li>Used in navigation and routing algorithms</li>
+      <li>Essential for competitive programming</li>
+      <li>Frequently asked in interviews</li>
+    </ul>
+
+    <h2>Types of Graphs</h2>
+
+    <h3>Undirected Graph</h3>
+    <p>
+      Edges do not have direction. If there is an edge between A and B, then B
+      is also connected to A.
+    </p>
+
+    <h3>Directed Graph</h3>
+    <p>
+      Edges have direction. One-way roads are a common example.
+    </p>
+
+    <h3>Weighted Graph</h3>
+    <p>
+      Each edge has a weight or cost associated with it.
+    </p>
+
+    <h3>Unweighted Graph</h3>
+    <p>
+      All edges have equal weight.
+    </p>
+      <img src="images/graphstypes.png"
+     alt="Graph Types"
+     loading="lazy"
+     style="width:100%; max-width:600px; display:block; margin:20px auto;">
+
+    <h2>Graph Representations</h2>
+
+    <h3>Adjacency Matrix</h3>
+    <p>
+      Uses a 2D matrix to represent connections between vertices.
+    </p>
+
+    <h3>Adjacency List</h3>
+    <p>
+      Uses a list to store neighboring vertices for each vertex. It is more
+      space-efficient than an adjacency matrix.
+    </p>
+
+    <h2>Graph Traversal</h2>
+
+    <h3>Breadth First Search (BFS)</h3>
+    <p>
+      BFS explores the graph level by level using a queue. It is used to find
+      the shortest path in unweighted graphs.
+    </p>
+
+    <h3>Depth First Search (DFS)</h3>
+    <p>
+      DFS explores as far as possible along a branch before backtracking. It
+      uses recursion or a stack.
+    </p>
+
+    <h2>Time Complexity of Traversals</h2>
+    <ul>
+      <li>BFS: O(V + E)</li>
+      <li>DFS: O(V + E)</li>
+    </ul>
+    <h2>Graph Traversals – BFS vs DFS</h2>
+
+<p>
+  Graph traversal algorithms visit all vertices of a graph.
+  The two most important traversals are Breadth First Search (BFS)
+  and Depth First Search (DFS).
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px;">Traversal</th>
+    <th style="border:1px solid #ccc; padding:10px;">Working Principle</th>
+    <th style="border:1px solid #ccc; padding:10px;">Time Complexity</th>
+    <th style="border:1px solid #ccc; padding:10px;">Data Structure Used</th>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>BFS</b>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Visits nodes level by level, exploring all neighbors first.
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      O(V + E)
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Queue
+    </td>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>DFS</b>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Explores deep into the graph before backtracking.
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      O(V + E)
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Stack / Recursion
+    </td>
+  </tr>
+
+</table>
+
+
+    <h2>Common Graph Applications</h2>
+    <ul>
+      <li>Shortest path algorithms</li>
+      <li>Cycle detection</li>
+      <li>Connected components</li>
+      <li>Topological sorting</li>
+    </ul>
+    <h2>Graph Algorithms – Code & Time Complexity Calculation</h2>
+
+<p>
+  Graph algorithms work on vertices (nodes) and edges.
+  Their time complexity depends on how many vertices (V) and edges (E)
+  are visited during execution.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">
+      Algorithm & Code
+    </th>
+    <th style="border:1px solid #ccc; padding:10px;">
+      Explanation & Time Complexity
+    </th>
+  </tr>
+
+  <!-- BFS -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Breadth First Search (BFS)</b><br><br>
+      <code>
+        BFS(start) {<br>
+        &nbsp;&nbsp;queue.add(start);<br>
+        &nbsp;&nbsp;visited[start] = true;<br>
+        &nbsp;&nbsp;while(queue not empty) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;v = queue.remove();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;for(each neighbor u of v) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(not visited[u]) queue.add(u);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Visits vertices level by level using a queue.<br>
+      Each vertex is visited once and each edge is checked once.<br>
+      <b>Time Complexity:</b> O(V + E)<br>
+      <b>Space Complexity:</b> O(V)
+    </td>
+  </tr>
+
+  <!-- DFS -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Depth First Search (DFS)</b><br><br>
+      <code>
+        DFS(v) {<br>
+        &nbsp;&nbsp;visited[v] = true;<br>
+        &nbsp;&nbsp;for(each neighbor u of v) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;if(not visited[u]) DFS(u);<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Explores as deep as possible before backtracking.<br>
+      Each vertex and edge is processed once.<br>
+      <b>Time Complexity:</b> O(V + E)<br>
+      <b>Space Complexity:</b> O(V) (recursion stack)
+    </td>
+  </tr>
+
+  <!-- Dijkstra -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Dijkstra’s Algorithm</b><br><br>
+      <code>
+        Dijkstra(source) {<br>
+        &nbsp;&nbsp;dist[source] = 0;<br>
+        &nbsp;&nbsp;while(unvisited vertices exist) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;u = min distance vertex;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;update neighbors of u;<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Finds shortest paths from a source vertex.<br>
+      Uses greedy selection of minimum distance vertex.<br>
+      <b>Time Complexity:</b> O((V + E) log V) using priority queue
+    </td>
+  </tr>
+
+  <!-- Topological Sort -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Topological Sort</b><br><br>
+      <code>
+        topoSort() {<br>
+        &nbsp;&nbsp;for(each vertex v) DFS(v);<br>
+        &nbsp;&nbsp;push v to stack after DFS;<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Orders vertices in a directed acyclic graph (DAG).<br>
+      Each vertex and edge is processed once.<br>
+      <b>Time Complexity:</b> O(V + E)
+    </td>
+  </tr>
+
+</table>
+
+
+    <h2>Graphs in Interviews</h2>
+    <p>
+      Interviewers test your ability to choose the correct traversal, represent
+      graphs efficiently, and analyze time complexity.
+    </p>
+
+    <p>
+      Practice graph problems to strengthen problem-solving skills and build
+      confidence.
+    </p>
+
+    <button class="btn" onclick="window.location.href='Graphs.html'">
+      ▶ Start Graphs Quiz
+    </button>
+
+  </main>
+</body>
+</html>

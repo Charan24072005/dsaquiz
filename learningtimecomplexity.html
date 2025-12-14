@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Time Complexity in Data Structures and Algorithms with clear explanations, examples, and interview tips." />
+  <meta name="robots" content="index, follow" />
+  <title>⏱ Time Complexity | DSA Learning</title>
+
+  <!-- Keep your existing font & styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 50px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #00ffcc;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-top: 35px;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      margin-top: 25px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      text-align: left;
+      margin: 10px auto 20px;
+      max-width: 600px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn:hover {
+      background: #00e6b5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>⏱ Time Complexity</h1>
+
+    <p>
+      Time Complexity is a method used to analyze how the execution time of an
+      algorithm increases as the input size grows. Instead of calculating time
+      in seconds, we focus on how fast the number of operations increases.
+    </p>
+
+    <h2>Why Time Complexity Matters</h2>
+    <p>
+      Understanding time complexity helps developers write efficient and
+      scalable code. It is especially important in competitive programming and
+      technical interviews where performance matters.
+    </p>
+
+    <ul>
+      <li>Helps avoid Time Limit Exceeded (TLE) errors</li>
+      <li>Improves problem-solving skills</li>
+      <li>Allows comparison between different algorithms</li>
+    </ul>
+
+    <h2>Big-O Notation</h2>
+    <p>
+      Big-O notation describes the worst-case performance of an algorithm. It
+      shows how the runtime grows relative to input size <b>n</b>.
+    </p>
+
+    <h3>O(1) – Constant Time</h3>
+    <p>
+      The execution time does not change with input size. Accessing an array
+      element by index is a common example.
+    </p>
+
+    <h3>O(log n) – Logarithmic Time</h3>
+    <p>
+      The input size reduces by half in each step. Binary Search is a classic
+      example of logarithmic time complexity.
+    </p>
+
+    <h3>O(n) – Linear Time</h3>
+    <p>
+      The algorithm processes each element once. Traversing an array is an
+      example.
+    </p>
+
+    <h3>O(n log n) – Linearithmic Time</h3>
+    <p>
+      This complexity is common in efficient sorting algorithms like Merge Sort
+      and Quick Sort (average case).
+    </p>
+
+    <h3>O(n²) – Quadratic Time</h3>
+    <p>
+      Occurs when there are nested loops. Bubble Sort and Selection Sort fall
+      under this category.
+    </p>
+
+    <h3>O(2ⁿ) – Exponential Time</h3>
+    <p>
+      Execution time doubles with each input increase. Recursive Fibonacci
+      without optimization is a typical example.
+    </p>
+
+    <h2>Best, Average & Worst Case</h2>
+    <p>
+      Algorithms can behave differently depending on input. Big-O notation
+      mainly focuses on the worst-case scenario to guarantee performance.
+    </p>
+   
+    <img src="images/timecomplexitygraph.png"
+     alt="Time Complexity Graph showing O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ)"
+     loading="lazy"
+     style="width:100%; max-width:600px; display:block; margin:20px auto;">
+    <h2>How Time Complexity is Calculated?</h2>
+
+<p>
+  This is exactly what interviewers and reviewers expect you to understand.
+  Time complexity is calculated by counting how the number of basic CPU
+  operations grows as the input size increases.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">Operation / Code Pattern</th>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">Why This Time Complexity</th>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Basic Operations</b><br>
+      Comparisons<br>
+      Assignments<br>
+      Arithmetic operations<br>
+      Function calls<br><br>
+      <b>Example:</b><br>
+      <code>int x = a + b;</code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      The CPU executes a fixed number of instructions.<br>
+      Execution time does not depend on input size.<br>
+      <b>Time Complexity: O(1) (Constant Time)</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Single Loop</b><br><br>
+      <code>
+        for(int i = 0; i &lt; n; i++) { }  
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Loop runs <b>n</b> times.<br>
+      Each iteration takes constant time.<br>
+      <b>Time Complexity: O(n)</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Nested Loops</b><br><br>
+      <code>
+        for(int i = 0; i &lt; n; i++) {<br>
+        &nbsp;&nbsp;for(int j = 0; j &lt; n; j++) { }<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Outer loop runs <b>n</b> times.<br>
+      Inner loop runs <b>n</b> times for each outer loop.<br>
+      Total operations = n × n = n².<br>
+      <b>Time Complexity: O(n²)</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Loop that halves input</b><br><br>
+      <code>
+        while(n &gt; 1) { n = n / 2; }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Input size reduces by half each step.<br>
+      Number of steps = log₂ n.<br>
+      <b>Time Complexity: O(log n)</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Recursive Function</b><br><br>
+      <code>
+        func(n) = func(n-1)
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      One recursive call per level.<br>
+      Recursion depth = n.<br>
+      <b>Time Complexity: O(n)</b>
+    </td>
+  </tr>
+
+</table>
+
+<p style="margin-top:20px;">
+  In short, time complexity is calculated by identifying how many times the CPU
+  executes basic operations as the input size grows.
+</p>
+
+     </p>
+
+    <h2>Common Student Mistakes</h2>
+    <ul>
+      <li>Confusing execution time with time complexity</li>
+      <li>Ignoring nested loops</li>
+      <li>Not considering recursion depth</li>
+      <li>Thinking faster hardware improves algorithm complexity</li>
+    </ul>
+
+    <h2>Time Complexity in Interviews</h2>
+    <p>
+      Interviewers often ask for time complexity to test analytical thinking.
+      Always explain your approach clearly and justify your complexity.
+    </p>
+
+    <p>
+      Now that you understand the fundamentals of time complexity, test your
+      knowledge using quiz questions.
+    </p>
+
+    <button class="btn" onclick="window.location.href='trailtimecomplexity.html'">
+      ▶ Start Time Complexity Quiz
+    </button>
+
+  </main>
+</body>
+</html>

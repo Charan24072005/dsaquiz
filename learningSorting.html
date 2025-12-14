@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Sorting Algorithms in DSA including Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort and Heap Sort." />
+  <meta name="robots" content="index, follow" />
+  <title>⚙️ Sorting Algorithms | DSA Learning</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 50px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #00ffcc;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-top: 35px;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      margin-top: 25px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    table, th, td {
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: rgba(0,255,204,0.2);
+    }
+
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn:hover {
+      background: #00e6b5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>⚙️ Sorting Algorithms</h1>
+
+    <p>
+      Sorting is the process of arranging elements in a specific order, usually
+      ascending or descending. Sorting improves efficiency and is a fundamental
+      concept in Data Structures and Algorithms.
+    </p>
+
+    <h2>Why Sorting is Important</h2>
+    <ul>
+      <li>Makes searching faster</li>
+      <li>Helps in ranking and ordering data</li>
+      <li>Used in many real-world applications</li>
+      <li>Frequently asked in interviews</li>
+    </ul>
+<h2>Bubble Sort</h2>
+<p>
+  Bubble Sort works by repeatedly comparing adjacent elements and swapping them
+  if they are in the wrong order. After each complete pass through the array,
+  the largest element moves to its correct position at the end. This process
+  continues until the array becomes fully sorted.
+  The algorithm is called “Bubble Sort” because larger elements gradually
+  bubble up to the top of the list.
+</p>
+<ul>
+  <li>Best Case: O(n) – when the array is already sorted</li>
+  <li>Average Case: O(n²)</li>
+  <li>Worst Case: O(n²)</li>
+  <li>Stable: Yes</li>
+</ul>
+
+<h2>Selection Sort</h2>
+<p>
+  Selection Sort divides the array into two parts: a sorted part and an unsorted
+  part. In each iteration, it finds the smallest element from the unsorted
+  portion and places it at the correct position in the sorted part.
+  Even though it minimizes swaps, it still compares all remaining elements.
+</p>
+<ul>
+  <li>Best Case: O(n²)</li>
+  <li>Average Case: O(n²)</li>
+  <li>Worst Case: O(n²)</li>
+  <li>Stable: No</li>
+</ul>
+
+<h2>Insertion Sort</h2>
+<p>
+  Insertion Sort builds the sorted array one element at a time.
+  It takes the next element and inserts it into its correct position
+  among the already sorted elements by shifting larger elements to the right.
+  This is similar to how cards are sorted in hand.
+</p>
+<ul>
+  <li>Best Case: O(n) – when the array is already sorted</li>
+  <li>Average Case: O(n²)</li>
+  <li>Worst Case: O(n²)</li>
+  <li>Stable: Yes</li>
+</ul>
+
+<h2>Merge Sort</h2>
+<p>
+  Merge Sort uses the divide and conquer technique.
+  The array is repeatedly divided into smaller halves until each subarray
+  contains only one element. These subarrays are then merged back together
+  in a sorted manner to form the final sorted array.
+  It guarantees consistent performance regardless of input order.
+</p>
+<ul>
+  <li>Best Case: O(n log n)</li>
+  <li>Average Case: O(n log n)</li>
+  <li>Worst Case: O(n log n)</li>
+  <li>Stable: Yes</li>
+</ul>
+
+<h2>Quick Sort</h2>
+<p>
+  Quick Sort selects a pivot element and rearranges the array so that
+  elements smaller than the pivot are placed before it and larger elements
+  are placed after it. The same process is then applied recursively to both
+  subarrays. It is very fast in practice but depends heavily on pivot selection.
+</p>
+<ul>
+  <li>Best Case: O(n log n)</li>
+  <li>Average Case: O(n log n)</li>
+  <li>Worst Case: O(n²) – when partitions are unbalanced</li>
+  <li>Stable: No</li>
+</ul>
+
+<h2>Heap Sort</h2>
+<p>
+  Heap Sort first converts the array into a binary heap data structure.
+  The largest element is repeatedly removed from the heap and placed at the
+  end of the array while maintaining the heap property.
+  This ensures predictable performance and does not depend on input order.
+</p>
+<ul>
+  <li>Best Case: O(n log n)</li>
+  <li>Average Case: O(n log n)</li>
+  <li>Worst Case: O(n log n)</li>
+  <li>Stable: No</li>
+</ul>
+
+    <h2>Sorting Algorithms – Code & Time Complexity Calculation</h2>
+
+<p>
+  The time complexity of sorting algorithms depends on how many comparisons
+  and swaps are performed as the input size <b>n</b> increases.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">
+      Algorithm & Code
+    </th>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">
+      How Time Complexity is Calculated
+    </th>
+  </tr>
+
+  <!-- Bubble Sort -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Bubble Sort</b><br><br>
+      <code>
+        for(int i = 0; i &lt; n; i++) {<br>
+        &nbsp;&nbsp;for(int j = 0; j &lt; n-i-1; j++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;if(arr[j] &gt; arr[j+1]) swap();<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Two nested loops are used.<br>
+      Outer loop runs <b>n</b> times.<br>
+      Inner loop runs up to <b>n</b> times.<br>
+      Total comparisons ≈ n × n = n².<br>
+      <b>Time Complexity: O(n²)</b>
+    </td>
+  </tr>
+
+  <!-- Selection Sort -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Selection Sort</b><br><br>
+      <code>
+        for(int i = 0; i &lt; n-1; i++) {<br>
+        &nbsp;&nbsp;min = i;<br>
+        &nbsp;&nbsp;for(int j = i+1; j &lt; n; j++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;if(arr[j] &lt; arr[min]) min = j;<br>
+        &nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;swap(arr[i], arr[min]);<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      For every element, the remaining array is scanned.<br>
+      Number of comparisons ≈ n².<br>
+      Even though swaps are few, comparisons dominate.<br>
+      <b>Time Complexity: O(n²)</b>
+    </td>
+  </tr>
+
+  <!-- Insertion Sort -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Insertion Sort</b><br><br>
+      <code>
+        for(int i = 1; i &lt; n; i++) {<br>
+        &nbsp;&nbsp;key = arr[i];<br>
+        &nbsp;&nbsp;j = i - 1;<br>
+        &nbsp;&nbsp;while(j &gt;= 0 &amp;&amp; arr[j] &gt; key) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;arr[j+1] = arr[j];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;j--;<br>
+        &nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;arr[j+1] = key;<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      In worst case, each element is compared with all previous elements.<br>
+      Nested shifting causes n² operations.<br>
+      Best case (already sorted) runs in linear time.<br>
+      <b>Worst: O(n²), Best: O(n)</b>
+    </td>
+  </tr>
+
+  <!-- Merge Sort -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Merge Sort</b><br><br>
+      <code>
+        mergeSort(arr) {<br>
+        &nbsp;&nbsp;divide array into halves<br>
+        &nbsp;&nbsp;mergeSort(left)<br>
+        &nbsp;&nbsp;mergeSort(right)<br>
+        &nbsp;&nbsp;merge(left, right)<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Array is divided into halves → log n levels.<br>
+      At each level, merging takes O(n).<br>
+      Total operations = n × log n.<br>
+      <b>Time Complexity: O(n log n)</b>
+    </td>
+  </tr>
+
+  <!-- Quick Sort -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Quick Sort</b><br><br>
+      <code>
+        quickSort(arr) {<br>
+        &nbsp;&nbsp;pivot = choosePivot()<br>
+        &nbsp;&nbsp;partition array<br>
+        &nbsp;&nbsp;quickSort(left)<br>
+        &nbsp;&nbsp;quickSort(right)<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Partitioning divides array around pivot.<br>
+      Average case gives balanced partitions → log n levels.<br>
+      Worst case occurs with bad pivot choice.<br>
+      <b>Average: O(n log n), Worst: O(n²)</b>
+    </td>
+  </tr>
+
+</table>
+
+<p style="margin-top:20px;">
+  Sorting time complexity depends on how many comparisons and swaps are needed.
+  Nested loops cause quadratic time, while divide-and-conquer approaches reduce
+  complexity.
+</p>
+
+
+    <h2>Sorting Comparison Table</h2>
+    <table>
+      <tr>
+        <th>Algorithm</th>
+        <th>Best</th>
+        <th>Average</th>
+        <th>Worst</th>
+        <th>Stable</th>
+      </tr>
+      <tr>
+        <td>Bubble Sort</td>
+        <td>O(n)</td>
+        <td>O(n²)</td>
+        <td>O(n²)</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Selection Sort</td>
+        <td>O(n²)</td>
+        <td>O(n²)</td>
+        <td>O(n²)</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Insertion Sort</td>
+        <td>O(n)</td>
+        <td>O(n²)</td>
+        <td>O(n²)</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Merge Sort</td>
+        <td>O(n log n)</td>
+        <td>O(n log n)</td>
+        <td>O(n log n)</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Quick Sort</td>
+        <td>O(n log n)</td>
+        <td>O(n log n)</td>
+        <td>O(n²)</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Heap Sort</td>
+        <td>O(n log n)</td>
+        <td>O(n log n)</td>
+        <td>O(n log n)</td>
+        <td>No</td>
+      </tr>
+    </table>
+
+    <p>
+      Understanding sorting algorithms helps you choose the right approach for
+      different problems and improves interview performance.
+    </p>
+
+    <button class="btn" onclick="window.location.href='Sorting.html'">
+      ▶ Start Sorting Quiz
+    </button>
+
+  </main>
+</body>
+</html>

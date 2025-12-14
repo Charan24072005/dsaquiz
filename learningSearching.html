@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Searching Algorithms in DSA including Linear Search, Binary Search, Jump Search, and Interpolation Search." />
+  <meta name="robots" content="index, follow" />
+  <title>🔍 Searching Algorithms | DSA Learning</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 50px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #00ffcc;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-top: 35px;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      margin-top: 25px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    table, th, td {
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: rgba(0,255,204,0.2);
+    }
+
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn:hover {
+      background: #00e6b5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>🔍 Searching Algorithms</h1>
+
+    <p>
+      Searching is the process of finding a specific element within a data
+      structure. Efficient searching reduces time complexity and improves
+      application performance.
+    </p>
+
+    <h2>Why Searching is Important</h2>
+    <ul>
+      <li>Quickly locate data</li>
+      <li>Improve algorithm efficiency</li>
+      <li>Foundation for databases and indexing</li>
+      <li>Frequently asked in interviews</li>
+    </ul>
+
+   <h2>Linear Search</h2>
+<p>
+  Linear Search is the simplest searching technique.
+  It scans each element of the list sequentially from the beginning until
+  the target element is found or the entire list has been checked.
+  Since it does not rely on any order, it can be used on both sorted and
+  unsorted data structures, but it becomes inefficient for large datasets.
+</p>
+<ul>
+  <li>Best Case: O(1)</li>
+  <li>Average Case: O(n)</li>
+  <li>Worst Case: O(n)</li>
+  <li>Works on both sorted and unsorted data</li>
+</ul>
+<h2>Binary Search</h2>
+<p>
+  Binary Search is an efficient searching algorithm that works only on
+  sorted arrays. It compares the target value with the middle element of
+  the array and eliminates half of the remaining elements in each step.
+  This repeated halving of the search space makes Binary Search much faster
+  than Linear Search for large datasets.
+</p>
+<ul>
+  <li>Best Case: O(1)</li>
+  <li>Average Case: O(log n)</li>
+  <li>Worst Case: O(log n)</li>
+  <li>Requires sorted data</li>
+</ul>
+
+    <h2>Jump Search(Optional For reference)</h2>
+    <p>
+      Jump Search moves ahead by fixed steps and then performs linear search
+      within the block.
+    </p>
+    <ul>
+      <li>Best Case: O(1)</li>
+      <li>Average Case: O(√n)</li>
+      <li>Worst Case: O(√n)</li>
+      <li>Requires sorted array</li>
+    </ul>
+
+    <h2>Interpolation Search(Optional For reference)</h2>
+    <p>
+      Interpolation Search estimates the position of the target based on its
+      value.
+    </p>
+    <ul>
+      <li>Best Case: O(1)</li>
+      <li>Average Case: O(log log n)</li>
+      <li>Worst Case: O(n)</li>
+      <li>Works best for uniformly distributed data</li>
+    </ul>
+    <h2>Searching Algorithms – Code & Time Complexity Calculation</h2>
+
+<p>
+  Searching algorithms locate a target element in a data structure.
+  Time complexity depends on how many comparisons the CPU performs
+  as the input size <b>n</b> increases.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">
+      Algorithm & Code
+    </th>
+    <th style="border:1px solid #ccc; padding:10px;">
+      Explanation & Time Complexity
+    </th>
+  </tr>
+
+  <!-- Linear Search -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Linear Search</b><br><br>
+      <code>
+        for(int i = 0; i &lt; n; i++) {<br>
+        &nbsp;&nbsp;if(arr[i] == target)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return i;<br>
+        }<br>
+        return -1;
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Checks elements one by one from start to end.<br>
+      In the worst case, every element must be compared.<br>
+      Number of comparisons grows linearly with input size.<br>
+      <b>Best Case:</b> O(1) (element at first position)<br>
+      <b>Worst Case:</b> O(n) (element at last position or not present)
+    </td>
+  </tr>
+
+  <!-- Binary Search -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Binary Search</b><br><br>
+      <code>
+        while(low &lt;= high) {<br>
+        &nbsp;&nbsp;mid = (low + high) / 2;<br>
+        &nbsp;&nbsp;if(arr[mid] == target) return mid;<br>
+        &nbsp;&nbsp;else if(arr[mid] &lt; target) low = mid + 1;<br>
+        &nbsp;&nbsp;else high = mid - 1;<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Works only on sorted arrays.<br>
+      Each comparison removes half of the remaining elements.<br>
+      Input size reduces as n → n/2 → n/4 → n/8.<br>
+      Number of steps required is logarithmic.<br>
+      <b>Time Complexity:</b> O(log n)
+    </td>
+  </tr>
+
+</table>
+
+<p style="margin-top:20px;">
+  Linear Search performs comparisons sequentially, leading to linear time.
+  Binary Search reduces the problem size in each step, resulting in logarithmic time.
+</p>
+
+
+    <h2>Searching Comparison Table</h2>
+    <table>
+      <tr>
+        <th>Algorithm</th>
+        <th>Best</th>
+        <th>Average</th>
+        <th>Worst</th>
+        <th>Sorted Required</th>
+      </tr>
+      <tr>
+        <td>Linear Search</td>
+        <td>O(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Binary Search</td>
+        <td>O(1)</td>
+        <td>O(log n)</td>
+        <td>O(log n)</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Jump Search</td>
+        <td>O(1)</td>
+        <td>O(√n)</td>
+        <td>O(√n)</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Interpolation Search</td>
+        <td>O(1)</td>
+        <td>O(log log n)</td>
+        <td>O(n)</td>
+        <td>Yes</td>
+      </tr>
+    </table>
+
+    <p>
+      Choosing the right searching algorithm depends on data size, data order,
+      and frequency of searches.
+    </p>
+
+    <button class="btn" onclick="window.location.href='Searching.html'">
+      ▶ Start Searching Quiz
+    </button>
+
+  </main>
+</body>
+</html>

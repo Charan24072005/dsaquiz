@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Trees in Data Structures and Algorithms including Binary Trees, BST, traversals, properties, and interview concepts." />
+  <meta name="robots" content="index, follow" />
+  <title>🌳 Trees | DSA Learning</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 50px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #00ffcc;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-top: 35px;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      margin-top: 25px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn:hover {
+      background: #00e6b5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>🌳 Trees</h1>
+
+    <p>
+      A tree is a hierarchical data structure made up of nodes connected by
+      edges. It starts from a root node and expands into child nodes, forming a
+      parent-child relationship.
+    </p>
+
+    <h2>Why Trees are Important</h2>
+    <ul>
+      <li>Represent hierarchical data like file systems</li>
+      <li>Used in databases and indexing</li>
+      <li>Foundation for advanced structures</li>
+      <li>Very common in interviews</li>
+    </ul>
+
+    <h2>Basic Tree Terminology</h2>
+    <ul>
+      <li><b>Root:</b> Topmost node of the tree</li>
+      <li><b>Parent:</b> Node with children</li>
+      <li><b>Child:</b> Node connected below a parent</li>
+      <li><b>Leaf:</b> Node with no children</li>
+      <li><b>Height:</b> Longest path from root to leaf</li>
+    </ul>
+    <img src="images/treeterminoligies.png"
+     alt="treeterminoligies"
+     loading="lazy"
+     style="width:100%; max-width:600px; display:block; margin:20px auto;">
+
+  <h2>Types of Trees</h2>
+
+<h3>Binary Tree</h3>
+<p>
+  A Binary Tree is a tree data structure in which each node can have
+  at most two children, referred to as the left child and the right child.
+  There is no restriction on the order or values of the nodes.
+  Binary Trees are the foundation for many advanced tree structures.
+</p>
+
+<h3>Binary Search Tree (BST)</h3>
+<p>
+  A Binary Search Tree is a special type of Binary Tree that follows
+  an ordering property. For every node, all values in the left subtree
+  are smaller than the node’s value, and all values in the right subtree
+  are larger. This property allows efficient searching, insertion,
+  and deletion operations.
+</p>
+
+<h3>Balanced Binary Tree</h3>
+<p>
+  A Balanced Binary Tree is a Binary Tree where the height difference
+  between the left and right subtrees of any node is minimal.
+  This balance ensures that operations like search, insert, and delete
+  take logarithmic time, making the tree efficient.
+  Examples include AVL Trees and Red-Black Trees.
+</p>
+
+<h3>Full Binary Tree</h3>
+<p>
+  A Full Binary Tree is a tree in which every node has either
+  exactly two children or no children at all.
+  This means no node has only one child.
+  Full Binary Trees are often used to analyze theoretical properties
+  of tree structures.
+</p>
+
+<h3>Complete Binary Tree</h3>
+<p>
+  A Complete Binary Tree is a Binary Tree in which all levels are
+  completely filled except possibly the last level.
+  The nodes in the last level are filled from left to right.
+  This structure is commonly used in Heap data structures.
+</p>
+
+
+    <h2>Tree Traversals – Types & Time Complexity</h2>
+
+<p>
+  Tree traversal algorithms visit every node in a specific order.
+  Traversals are fundamental for solving most tree problems.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px;">Traversal</th>
+    <th style="border:1px solid #ccc; padding:10px;">Order</th>
+    <th style="border:1px solid #ccc; padding:10px;">Explanation</th>
+    <th style="border:1px solid #ccc; padding:10px;">Time Complexity</th>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;"><b>Inorder</b></td>
+    <td style="border:1px solid #ccc; padding:10px;">Left → Root → Right</td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Visits nodes in sorted order for BST.
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">O(n)</td>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;"><b>Preorder</b></td>
+    <td style="border:1px solid #ccc; padding:10px;">Root → Left → Right</td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Useful for copying or serializing trees.
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">O(n)</td>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;"><b>Postorder</b></td>
+    <td style="border:1px solid #ccc; padding:10px;">Left → Right → Root</td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Used for deleting trees or evaluating expressions.
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">O(n)</td>
+  </tr>
+
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;"><b>Level Order</b></td>
+    <td style="border:1px solid #ccc; padding:10px;">Level by level</td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Uses a queue to traverse breadth-wise.
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">O(n)</td>
+  </tr>
+
+</table>
+
+
+    <h2>Time Complexity</h2>
+    <ul>
+      <li>Traversal: O(n)</li>
+      <li>Search in BST: O(log n) (average)</li>
+      <li>Search in skewed tree: O(n)</li>
+    </ul>
+
+    <h2>Common Tree Problems</h2>
+    <ul>
+      <li>Height of a tree</li>
+      <li>Diameter of a tree</li>
+      <li>Check if trees are identical</li>
+      <li>Lowest Common Ancestor (LCA)</li>
+      <li>Invert a binary tree</li>
+    </ul>
+<h2>Tree Algorithms – Code & Time Complexity Calculation</h2>
+
+<p>
+  Tree algorithms operate on hierarchical data structures.
+  Time complexity depends on the number of nodes <b>n</b> and
+  how the tree is structured (balanced or skewed).
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">
+      Algorithm & Code
+    </th>
+    <th style="border:1px solid #ccc; padding:10px;">
+      Explanation & Time Complexity
+    </th>
+  </tr>
+
+  <!-- Height of Tree -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Height of Binary Tree</b><br><br>
+      <code>
+        height(node) {<br>
+        &nbsp;&nbsp;if(node == null) return 0;<br>
+        &nbsp;&nbsp;return 1 + max(height(node.left),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height(node.right));<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Recursively computes height of left and right subtrees.<br>
+      Each node is visited once.<br>
+      <b>Time Complexity:</b> O(n)<br>
+      <b>Space Complexity:</b> O(h), where h is tree height
+    </td>
+  </tr>
+
+  <!-- Search in BST -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Search in Binary Search Tree (BST)</b><br><br>
+      <code>
+        search(node, key) {<br>
+        &nbsp;&nbsp;if(node == null || node.key == key)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return node;<br>
+        &nbsp;&nbsp;if(key &lt; node.key)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return search(node.left, key);<br>
+        &nbsp;&nbsp;return search(node.right, key);<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Uses BST property to eliminate half of the tree at each step.<br>
+      Balanced BST reduces height logarithmically.<br>
+      <b>Average:</b> O(log n)<br>
+      <b>Worst (skewed tree):</b> O(n)
+    </td>
+  </tr>
+
+  <!-- Diameter -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Diameter of Binary Tree</b><br><br>
+      <code>
+        diameter(node) {<br>
+        &nbsp;&nbsp;if(node == null) return 0;<br>
+        &nbsp;&nbsp;return max(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;height(node.left) + height(node.right),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;diameter(node.left),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;diameter(node.right)<br>
+        &nbsp;&nbsp;);<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Computes longest path between any two nodes.<br>
+      Each node is processed once using optimized approach.<br>
+      <b>Time Complexity:</b> O(n)<br>
+      <b>Space Complexity:</b> O(h)
+    </td>
+  </tr>
+
+  <!-- LCA -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Lowest Common Ancestor (LCA)</b><br><br>
+      <code>
+        LCA(root, p, q) {<br>
+        &nbsp;&nbsp;if(root == null || root == p || root == q)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return root;<br>
+        &nbsp;&nbsp;left = LCA(root.left, p, q);<br>
+        &nbsp;&nbsp;right = LCA(root.right, p, q);<br>
+        &nbsp;&nbsp;if(left != null && right != null) return root;<br>
+        &nbsp;&nbsp;return left != null ? left : right;<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Traverses tree recursively to find split point.<br>
+      Each node is visited once.<br>
+      <b>Time Complexity:</b> O(n)<br>
+      <b>Space Complexity:</b> O(h)
+    </td>
+  </tr>
+
+</table>
+
+    <h2>Trees in Interviews</h2>
+    <p>
+      Interviewers test recursion understanding, traversal logic, and
+      time-space analysis. Clear explanation matters as much as code.
+    </p>
+
+    <p>
+      Practice tree problems to gain confidence and improve problem-solving
+      skills.
+    </p>
+
+    <button class="btn" onclick="window.location.href='Trees.html'">
+      ▶ Start Trees Quiz
+    </button>
+
+  </main>
+</body>
+</html>

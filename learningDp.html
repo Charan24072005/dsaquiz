@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Learn Dynamic Programming in DSA with concepts, types, examples, optimization, and interview patterns." />
+    <meta name="robots" content="index, follow" />
+    <title>🧩 Dynamic Programming | DSA Learning</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-size: 14px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 50px;
+            margin: auto;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            color: #00ffcc;
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #00ffcc;
+            margin-top: 35px;
+            font-size: 1.3rem;
+        }
+
+        h3 {
+            margin-top: 25px;
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .btn {
+            background: #00ffcc;
+            color: #000;
+            border: none;
+            padding: 12px 28px;
+            margin-top: 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: #00e6b5;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <h1>🧩 Dynamic Programming (DP)</h1>
+
+        <p>
+            Dynamic Programming is an optimization technique used to solve problems by
+            breaking them into overlapping subproblems and storing their results to
+            avoid repeated computations.
+        </p>
+
+        <h2>Why Dynamic Programming is Important</h2>
+        <ul>
+            <li>Optimizes recursive solutions</li>
+            <li>Reduces exponential time to polynomial</li>
+            <li>Used in advanced problem solving</li>
+            <li>Very important for interviews</li>
+        </ul>
+
+        <h2>When to Use Dynamic Programming</h2>
+        <p>
+            DP is used when a problem has:
+        </p>
+        <ul>
+            <li>Overlapping subproblems</li>
+            <li>Optimal substructure</li>
+        </ul>
+
+        <h2>Types of Dynamic Programming</h2>
+
+        <h3>Top-Down Approach (Memoization)</h3>
+        <p>
+            The Top-Down approach solves the problem using recursion.
+            It breaks the main problem into smaller subproblems and stores the result
+            of each subproblem in a memory structure such as an array or map.
+            Before solving any subproblem, it checks whether the result already exists.
+            This avoids repeated computations and significantly improves performance.
+            Memoization is especially useful when only a few subproblems are needed.
+        </p>
+
+        <h3>Bottom-Up Approach (Tabulation)</h3>
+        <p>
+            The Bottom-Up approach solves the problem iteratively.
+            It starts by solving the smallest possible subproblems and stores their
+            results in a table.
+            These stored results are then used to build solutions for larger problems.
+            This method avoids recursion and stack overhead, making it more efficient
+            in terms of space usage.
+        </p>
+
+
+        <h2>Classic DP Examples</h2>
+        <ul>
+            <li>Fibonacci Numbers</li>
+            <li>0/1 Knapsack Problem</li>
+            <li>Longest Common Subsequence (LCS)</li>
+            <li>Longest Increasing Subsequence (LIS)</li>
+            <li>Matrix Chain Multiplication</li>
+        </ul>
+        <h2>Dynamic Programming Algorithms – Code & Time Complexity</h2>
+
+        <p>
+            Dynamic Programming (DP) solves problems by breaking them into overlapping
+            subproblems and storing their results to avoid repeated computation.
+            Time complexity depends on the number of states and transitions.
+        </p>
+
+        <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+            <tr>
+                <th style="border:1px solid #ccc; padding:10px; width:45%;">
+                    Algorithm & Code
+                </th>
+                <th style="border:1px solid #ccc; padding:10px;">
+                    Explanation & Time Complexity
+                </th>
+            </tr>
+
+            <!-- Fibonacci DP -->
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    <b>Fibonacci (DP)</b><br><br>
+                    <code>
+        fib(n) {<br>
+        &nbsp;&nbsp;dp[0] = 0; dp[1] = 1;<br>
+        &nbsp;&nbsp;for(i = 2; i &lt;= n; i++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;dp[i] = dp[i-1] + dp[i-2];<br>
+        &nbsp;&nbsp;return dp[n];<br>
+        }
+      </code>
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    Each Fibonacci value is computed only once.<br>
+                    Loop runs from 2 to n.<br>
+                    Eliminates exponential recursive calls.<br>
+                    <b>Time Complexity:</b> O(n)<br>
+                    <b>Space Complexity:</b> O(n)
+                </td>
+            </tr>
+
+            <!-- 0/1 Knapsack -->
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    <b>0/1 Knapsack</b><br><br>
+                    <code>
+        knapsack(W, wt, val) {<br>
+        &nbsp;&nbsp;for(i = 0; i &lt;= n; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;for(w = 0; w &lt;= W; w++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i][w] = max(...);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </code>
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    DP table stores best value for each weight and item.<br>
+                    Two nested loops over items and capacity.<br>
+                    Total states = n × W.<br>
+                    <b>Time Complexity:</b> O(nW)<br>
+                    <b>Space Complexity:</b> O(nW)
+                </td>
+            </tr>
+
+            <!-- LCS -->
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    <b>Longest Common Subsequence (LCS)</b><br><br>
+                    <code>
+        LCS(s1, s2) {<br>
+        &nbsp;&nbsp;for(i = 1; i &lt;= n; i++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;for(j = 1; j &lt;= m; j++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i][j] = ...;<br>
+        }
+      </code>
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    Each state represents prefix comparison of strings.<br>
+                    DP table size = n × m.<br>
+                    All states computed once.<br>
+                    <b>Time Complexity:</b> O(nm)<br>
+                    <b>Space Complexity:</b> O(nm)
+                </td>
+            </tr>
+
+            <!-- LIS -->
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    <b>Longest Increasing Subsequence (LIS)</b><br><br>
+                    <code>
+        LIS(arr) {<br>
+        &nbsp;&nbsp;for(i = 0; i &lt; n; i++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;for(j = 0; j &lt; i; j++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(arr[j] &lt; arr[i])<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i] = max(...);<br>
+        }
+      </code>
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    For each element, all previous elements are checked.<br>
+                    Nested loops cause quadratic operations.<br>
+                    <b>Time Complexity:</b> O(n²)<br>
+                    <b>Space Complexity:</b> O(n)
+                </td>
+            </tr>
+
+            <!-- Coin Change -->
+            <tr>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    <b>Coin Change (Minimum Coins)</b><br><br>
+                    <code>
+        coinChange(coins, amount) {<br>
+        &nbsp;&nbsp;for(i = 1; i &lt;= amount; i++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;for(each coin)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i] = min(...);<br>
+        }
+      </code>
+                </td>
+                <td style="border:1px solid #ccc; padding:10px;">
+                    DP stores minimum coins for each amount.<br>
+                    Nested loops over amount and coin types.<br>
+                    Total states = amount × coins.<br>
+                    <b>Time Complexity:</b> O(n × amount)<br>
+                    <b>Space Complexity:</b> O(amount)
+                </td>
+            </tr>
+
+        </table>
+
+        <p style="margin-top:20px;">
+            Dynamic Programming improves efficiency by avoiding repeated calculations.
+            Proper state definition and transitions are key to optimal solutions.
+        </p>
+
+
+        <h2>Time and Space Complexity</h2>
+        <p>
+            Time complexity depends on the number of states and transitions. Space
+            complexity depends on the DP table or recursion stack.
+        </p>
+
+
+        <h2>DP Optimization Techniques</h2>
+        <ul>
+            <li>Space optimization using rolling arrays</li>
+            <li>State compression</li>
+            <li>Eliminating unnecessary states</li>
+        </ul>
+
+        <h2>Common Mistakes in DP</h2>
+        <ul>
+            <li>Wrong state definition</li>
+            <li>Incorrect transition logic</li>
+            <li>Not handling base cases</li>
+            <li>Excessive memory usage</li>
+        </ul>
+
+        <h2>Dynamic Programming in Interviews</h2>
+        <p>
+            Interviewers expect you to explain state definition, transition, base
+            case, and complexity clearly. Writing clean logic is more important than
+            memorizing solutions.
+        </p>
+
+        <p>
+            Practice DP problems regularly to build confidence and improve logical
+            thinking.
+        </p>
+
+        <button class="btn" onclick="window.location.href='Dp.html'">
+            ▶ Start DP Quiz
+        </button>
+
+    </main>
+</body>
+
+</html>

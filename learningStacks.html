@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Stack and Queue in Data Structures with operations, types, applications, and interview concepts." />
+  <meta name="robots" content="index, follow" />
+  <title>📦 Stack & Queue | DSA Learning</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 50px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #00ffcc;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-top: 35px;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      margin-top: 25px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn:hover {
+      background: #00e6b5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>📦 Stack & Queue</h1>
+
+    <p>
+      Stack and Queue are linear data structures that store elements in a
+      specific order. They differ mainly in how elements are inserted and
+      removed.
+    </p>
+
+    <h2>Stack</h2>
+    <p>
+      Stack follows the <b>LIFO (Last In, First Out)</b> principle. The last
+      element added is the first one removed.
+    </p>
+
+    <h3>Stack Operations</h3>
+    <ul>
+      <li>Push – Insert an element</li>
+      <li>Pop – Remove the top element</li>
+      <li>Peek / Top – View the top element</li>
+      <li>isEmpty – Check if stack is empty</li>
+    </ul>
+    
+
+    <h3>Applications of Stack</h3>
+    <ul>
+      <li>Function calls (call stack)</li>
+      <li>Expression evaluation</li>
+      <li>Undo / Redo operations</li>
+      <li>Backtracking problems</li>
+    </ul>
+
+    <h2>Queue</h2>
+    <p>
+      Queue follows the <b>FIFO (First In, First Out)</b> principle. The first
+      element added is the first one removed.
+    </p>
+
+    <h3>Queue Operations</h3>
+    <ul>
+      <li>Enqueue – Insert an element</li>
+      <li>Dequeue – Remove an element</li>
+      <li>Front – Get front element</li>
+      <li>isEmpty – Check if queue is empty</li>
+    </ul>
+
+    <h3>Applications of Queue</h3>
+    <ul>
+      <li>CPU scheduling</li>
+      <li>Printer queue</li>
+      <li>Breadth First Search (BFS)</li>
+      <li>Handling requests in servers</li>
+    </ul>
+
+    <h2>Types of Queues</h2>
+    <ul>
+      <li>Simple Queue</li>
+      <li>Circular Queue</li>
+      <li>Priority Queue</li>
+      <li>Deque (Double Ended Queue)</li>
+    </ul>
+
+    <h2>Time Complexity</h2>
+    <ul>
+      <li>Stack operations: O(1)</li>
+      <li>Queue operations: O(1)</li>
+    </ul>
+
+    <h2>Common Problems</h2>
+    <ul>
+      <li>Valid Parentheses</li>
+      <li>Next Greater Element</li>
+      <li>Implement Stack using Queue</li>
+      <li>Sliding Window Maximum</li>
+    </ul>
+    <h2>Stack & Queue Algorithms – Code & Time Complexity</h2>
+
+<p>
+  Stack and Queue are linear data structures used to store elements
+  in a specific order. Their time complexity depends on how elements
+  are inserted and removed.
+</p>
+
+<table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <tr>
+    <th style="border:1px solid #ccc; padding:10px; width:45%;">
+      Algorithm & Code
+    </th>
+    <th style="border:1px solid #ccc; padding:10px;">
+      Explanation & Time Complexity
+    </th>
+  </tr>
+
+  <!-- Stack Push & Pop -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Stack Push & Pop</b><br><br>
+      <code>
+        push(x) {<br>
+        &nbsp;&nbsp;stack[++top] = x;<br>
+        }<br><br>
+        pop() {<br>
+        &nbsp;&nbsp;return stack[top--];<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Insert and remove elements only from the top.<br>
+      No shifting or traversal required.<br>
+      Constant number of CPU operations.<br>
+      <b>Time Complexity:</b> O(1)
+    </td>
+  </tr>
+
+  <!-- Queue Enqueue & Dequeue -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Queue Enqueue & Dequeue</b><br><br>
+      <code>
+        enqueue(x) {<br>
+        &nbsp;&nbsp;queue[rear++] = x;<br>
+        }<br><br>
+        dequeue() {<br>
+        &nbsp;&nbsp;return queue[front++];<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Elements are added at rear and removed from front.<br>
+      No element shifting is needed.<br>
+      Each operation uses fixed steps.<br>
+      <b>Time Complexity:</b> O(1)
+    </td>
+  </tr>
+
+  <!-- Stack using Array -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Stack using Array</b><br><br>
+      <code>
+        stack[size];<br>
+        top = -1;<br>
+        push(x); pop();
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Direct index access allows constant operations.<br>
+      Overflow and underflow must be checked.<br>
+      Memory allocated at once.<br>
+      <b>Time Complexity:</b> O(1)
+    </td>
+  </tr>
+
+  <!-- Queue using Array -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Queue using Array</b><br><br>
+      <code>
+        front = 0; rear = -1;<br>
+        enqueue(x); dequeue();
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Fixed-size array stores elements sequentially.<br>
+      Circular queue avoids wasted space.<br>
+      Constant-time insert and delete.<br>
+      <b>Time Complexity:</b> O(1)
+    </td>
+  </tr>
+
+  <!-- Stack Applications -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Valid Parentheses</b><br><br>
+      <code>
+        for each char in string {<br>
+        &nbsp;&nbsp;if(open) push;<br>
+        &nbsp;&nbsp;if(close) pop;<br>
+        }
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Each character is processed once.<br>
+      Stack stores opening brackets.<br>
+      Linear traversal dominates runtime.<br>
+      <b>Time Complexity:</b> O(n)
+    </td>
+  </tr>
+
+  <!-- Queue Application -->
+  <tr>
+    <td style="border:1px solid #ccc; padding:10px;">
+      <b>Sliding Window Maximum</b><br><br>
+      <code>
+        use deque to track max elements<br>
+        remove smaller elements<br>
+      </code>
+    </td>
+    <td style="border:1px solid #ccc; padding:10px;">
+      Each element is added and removed once.<br>
+      Efficient use of deque structure.<br>
+      Avoids nested loops.<br>
+      <b>Time Complexity:</b> O(n)
+    </td>
+  </tr>
+
+</table>
+
+<p style="margin-top:20px;">
+  Stack and Queue operations are efficient because they restrict
+  access to elements in a controlled order, ensuring constant-time
+  insert and delete operations.
+</p>
+
+
+    <h2>Stack & Queue in Interviews</h2>
+    <p>
+      Interviewers test understanding of LIFO vs FIFO, implementation, and
+      real-world use cases. Explain logic clearly.
+    </p>
+
+    <p>
+      Practice stack and queue problems to strengthen fundamentals.
+    </p>
+
+    <button class="btn" onclick="window.location.href='Stacks.html'">
+      ▶ Start Stack & Queue Quiz
+    </button>
+
+  </main>
+</body>
+</html>
